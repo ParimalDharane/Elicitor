@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Type Ahead Test</title>
+
+    <link href="../vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <!--<link href="../styles/elicitor-style.css" rel="stylesheet" />-->
+
+    <script src="../vendor/jquery/jquery.min.js" ></script>
+    <script src="../vendor/angularjs/angular.min.js" ></script>
+    <script src="../vendor/angularjs/angular-animate.min.js" ></script>
+    <script src="../vendor/bootstrap/typeahead.js" ></script>
+
+    <script src="TestTypeAheadCtrl.js"></script>
+
+</head>
+<body ng-controller="MyCtrl">
+
+<div class="page-header">
+    <h4>Welcome to Type Ahead Test</h4>
+</div>
+<div class="well">
+    Select your color:
+    <input type="text" data-provide="typeahead" data-source="colorList">
+</div>
+
+<h5>Type Ahead Test - Footer</h5>
+</body>
+</html>

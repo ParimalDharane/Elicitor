@@ -1,0 +1,70 @@
+/* Elicitor styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+    padding: 30px 15px 0;
+}
+.container .text-muted {
+    margin: 20px 0;
+}
+
+.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+code {
+    font-size: 80%;
+}
+
+.ea-input-panel {
+    margin: 2px 8px 4px 8px;
+}
+.ea-col-input-label {
+    text-align: right;
+    width: 15%;
+}
+.ea-category-btn {
+    width: 120px;
+}
+.ea-result-acronym {
+    text-align: center;
+    width: 10%;
+}
+.category {
+    width: 200px;
+    height: 60px;
+    border: 1px solid;
+    margin-right: 4px;
+    padding: 4px;
+}
+.ea-row {
+    display: block;
+}
+.ea-row-left {
+    float: left;
+}
+.ea-row-right {
+    float: right;
+}

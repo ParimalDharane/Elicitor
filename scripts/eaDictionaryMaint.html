@@ -1,0 +1,43 @@
+<section>
+   <!--<h4>Contribute to Dictionary</h4>-->
+    <div class="panel panel-primary ea-input-panel">
+        <div class="panel-heading">Enter word for acronym</div>
+        <div class="panel-body">
+            <table class="table">
+                <tr>
+                    <td class="ea-col-input-label">
+                        <label for="userWord">Word:</label>
+                    </td>
+                    <td>
+                        <input id="userWord" maxlength="30" ng-model="dictionaryData.word" class="col-lg-5">
+                    </td>
+                    <td rowspan="3">
+                        <label>Acronym:</label>
+                        <h1 class="label-warning col-lg-2" style="text-align: center">{{dictionaryData.word[0]}}</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ea-col-input-label">
+                        <label for="userMeaning">Meaning:</label>
+                    </td>
+                    <td>
+                        <input id="userMeaning" maxlength="30" ng-model="dictionaryData.meaning" class="col-lg-5">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ea-col-input-label">
+                        <label for="userCategory">Category:</label>
+                    </td>
+                    <td>
+                        <input id="userCategory" maxlength="30" ng-model="dictionaryData.category" class="col-lg-5">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-primary" ng-click="doSubmitWord(dictionaryData);">Submit</button>
+            <button class="btn" ng-click="dictionaryData.word='';dictionaryData.meaning='';dictionaryData.category='';">Clear</button>
+        </div>
+    </div>
+
+</section>

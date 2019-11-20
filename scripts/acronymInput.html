@@ -1,0 +1,83 @@
+<section>
+    <div class="panel panel-info ea-input-panel">
+        <div class="panel-heading">Enter acronym or name or word, select desired category and hit Generate</div>
+        <div class="panel-body">
+            <table class="table">
+            <tr>
+                <td class="ea-col-input-label">
+                    <label for="userAcronym">Name or Word*:</label>
+                </td>
+                <td>
+                    <input id="userAcronym" maxlength="30" ng-model="userData.word" required class="col-lg-5" placeholder="Enter name / acronym / word">
+                    <br/>
+                    <span class="error" ng-show="userData.word.$error.required">Required!</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="ea-col-input-label">
+                    <label for="userCategory">Category:</label>
+                </td>
+                <td>
+
+<!--
+                    scope.categoryList.push(new Category('Any', EC_ANY, 'label-default'));
+                    scope.categoryList.push(new Category('Good', EC_GOOD, 'label-primary'));
+                    scope.categoryList.push(new Category('Bad', EC_BAD, 'label-danger'));
+                    scope.categoryList.push(new Category('Funny', EC_FUNNY, 'label-info'));
+                    scope.categoryList.push(new Category('Spell Out', EC_SPELLOUT, 'label-warning'));
+-->
+
+                    <div id="userCategory">
+
+                        <button type="button" class="btn btn-default label-info ea-category-btn {{categoryList['ANY'].state}}"
+                            ng-click="onInputCategory('ANY');"
+                            data-toggle="tooltip" data-placement="bottom" title="Pick random words from all categories">
+                            Any
+                        </button>
+                        <button type="button" class="btn btn-default label-info ea-category-btn disabled fa fa-minus-circle"
+                            ng-click="onInputCategory(EC_ANY);"
+                            data-toggle="tooltip" data-placement="bottom" title="Not supported yet. Coming soon...">
+                            Good
+                        </button>
+                        <button type="button" class="btn btn-default label-danger ea-category-btn disabled fa fa-minus-circle"
+                            ng-click="onInputCategory(EC_ANY);"
+                            data-toggle="tooltip" data-placement="bottom" title="Not supported yet. Coming soon...">
+                            Bad/Funny
+                        </button>
+                        <button type="button" class="btn btn-default label-info ea-category-btn {{categoryList['SPELLOUT'].state}}"
+                            ng-click="onInputCategory('SPELLOUT');"
+                            data-toggle="tooltip" data-placement="bottom" title="Pick words from Spell-out category">
+                            Spell Out
+                        </button>
+                    </div>
+<!--
+                    <div id="userCategory" class="btn-group btn-group-lg" ng-repeat="category in categoryList">
+                        <button type="button" class="btn btn-default {{category.cssClass}} ea-category-btn"
+                            ng-click="onInputCategory(category.code);">
+                            {{category.caption}}
+                        </button>
+                    </div>
+-->
+                </td>
+            </tr>
+        </table>
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-primary" ng-click="doGenerateElicite();">Generate</button>
+            <button class="btn" ng-click="userData.userAcronym='';">Clear</button>
+        </div>
+    </div>
+
+    <!--Result Panel-->
+    <div class="panel panel-info ea-input-panel">
+        <div class="panel-heading">Result</div>
+        <div class="panel-body">
+            <table class="table table-striped table-condensed table-hover">
+                <tr ng-repeat="item in resultData">
+                    <td class="ea-result-acronym">{{item.acronym}}</td>
+                    <td>{{item.word}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
